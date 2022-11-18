@@ -1,0 +1,11 @@
+.MenuListaNavbar{
+    background-image: url('../images/depositphotos_240785076-stock-photo-handmade-pink-orange-yellow-watercolor.jpg');
+    
+}
+.fondo{
+    background-image: url('../images/depositphotos_476931382-stock-photo-watercolor-background-illustration-abstract-painting.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
