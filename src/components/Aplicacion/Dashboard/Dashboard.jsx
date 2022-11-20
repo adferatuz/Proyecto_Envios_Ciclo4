@@ -1,5 +1,4 @@
 import {React} from "react";
-import { Loggin } from "../Servicios/Servicios";
 import '../css/style.css';
 import { useNavigate } from "react-router-dom";
 import sloganImg from '../images/pngtree-free-shipping-label-with-chat-bulb-frame-png-image_3416174.jpg'
@@ -8,6 +7,10 @@ export const Header = () => {
     const navigate = useNavigate();
     const handleOnClick = () => {
         navigate("/Loggin");
+    };
+    const navigate1 = useNavigate();
+    const handleOnClick1 = () => {
+        navigate1("/Envios");
     };
     
     
@@ -23,12 +26,12 @@ export const Header = () => {
                         
                         <li className="nav-item"><div class="dropdown">
                         <button class="btn btn-success nav-link active dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>Servicios</b> 
+                        <b>Envios</b> 
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><b>Mensajeria (-5K)</b></a></li>
-                            <li><a class="dropdown-item" href="#"><b>Carga (+5K)</b></a></li>
-                            <li><a class="dropdown-item" href="#"><b>Contra Entrega</b></a></li>
+                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Mensajeria (-5K)</b></a></li>
+                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Carga (+5K)</b></a></li>
+                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Contra Entrega</b></a></li>
                         </ul>
                         </div>
                         </li>
