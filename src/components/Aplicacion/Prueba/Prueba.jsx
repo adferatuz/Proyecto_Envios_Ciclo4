@@ -1,8 +1,16 @@
 import {React} from "react";
-import { servicios } from "../Servicios/Servicios";
+import { Loggin } from "../Servicios/Servicios";
 import '../css/style.css';
 import freeImg from'../images/pngtree-free-delivery-icon-png-image_1922196.jpg';
+import { useNavigate } from "react-router-dom";
+import sloganImg from '../images/pngtree-free-shipping-label-with-chat-bulb-frame-png-image_3416174.jpg'
+
 export const Header = () => {
+    const navigate = useNavigate();
+    const handleOnClick = () => {
+        navigate("/loggin");
+    };
+    
     return (
     <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -14,24 +22,16 @@ export const Header = () => {
                         <li className="nav-item"><a className="nav-link active btn btn-primary btn-circle btn-sm" aria-current="page" href="#!">Menu principal</a></li>
                         <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!">About</a></li>
                         <li className="nav-item"><a className="nav-link btn btn-primary btn-circle btn-sm" href="#!">Contact</a></li>
-                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!" onClick={servicios()}>Services</a></li>
+                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!" onClick={handleOnClick}>Services</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-    </>
-
-    )
-}
-
-export const Section = () => {
-    return (
-        <>
         <div className="container px-4 px-lg-5">
             
             <div className="row gx-4 gx-lg-5 align-items-center my-5">
-                <div className="col-lg-7"><img className="img-fluid rounded mb-4 mb-lg-0" src="https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-free-shipping-label-with-chat-bulb-frame-png-image_3416174.jpg" alt="..." /></div>
+                <div className="col-lg-7"><img className="img-fluid rounded mb-4 mb-lg-0" src={sloganImg} alt="..." /></div>
                 <div className="col-lg-5">
                     <h1 className="font-weight-light">Conozca nuestra empresa</h1>
                     <h2>Trabajamos para que te sientas seguro de tus envios! <br /> 100% confiables.</h2>
@@ -41,7 +41,7 @@ export const Section = () => {
             
             <div className="card text-white bg-secondary my-5 py-4 text-center">
                 <div className="card-body slogan"><p className="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!
-                <img src={freeImg} alt="" /></p></div>
+                </p></div>
             </div>
             
             <div className="row gx-4 gx-lg-5">
@@ -74,20 +74,6 @@ export const Section = () => {
                 </div>
             </div>
         </div>
-
-
-        </>
-    )
-}
-
-export const Footer = () => {
-    return (
-        <>
-        <footer className="py-5 bg-dark">
-            <div className="container px-4 px-lg-5"><p className="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
-
-
         </>
     )
 }
