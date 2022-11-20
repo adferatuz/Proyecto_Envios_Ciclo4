@@ -8,7 +8,7 @@ import sloganImg from '../images/pngtree-free-shipping-label-with-chat-bulb-fram
 export const Header = () => {
     const navigate = useNavigate();
     const handleOnClick = () => {
-        navigate("/loggin");
+        navigate("/");
     };
     
     return (
@@ -75,5 +75,5 @@ export const Header = () => {
             </div>
         </div>
         </>
-    )
-}
+    );
+};

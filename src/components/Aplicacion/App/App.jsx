@@ -9,8 +9,8 @@ export const Actualizable = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element ={<Header />}></Route> 
-                <Route path="/loggin" element ={<Loggin />}></Route>               
+                <Route path="/Dashboard" element ={<Header />}></Route> 
+                <Route path="/" element ={<Loggin />}></Route>               
             </Routes>
         </BrowserRouter>       
     )

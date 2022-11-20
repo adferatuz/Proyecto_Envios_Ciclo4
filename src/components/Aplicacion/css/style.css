@@ -9,3 +9,14 @@
     background-position: center;
     background-attachment: fixed;
 }
+
+
+.item{
+    
+    margin: 1em;
+    padding: 1em;
+    float: left;
+    height: 80%;
+    width: 70%;
+    
+}
