@@ -7,7 +7,7 @@ import sloganImg from '../images/pngtree-free-shipping-label-with-chat-bulb-fram
 export const Header = () => {
     const navigate = useNavigate();
     const handleOnClick = () => {
-        navigate("/");
+        navigate("/Loggin");
     };
     
     
@@ -19,20 +19,20 @@ export const Header = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse MenuListaNavbar" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item"><a className="nav-link active btn btn-primary btn-circle btn-sm" aria-current="page" href="#!">Pagina principal</a></li>
-                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!">Sigue tu envio</a></li>
+                        <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm " aria-current="page" href="#!"><b>Pagina principal</b></a></li>
+                        
                         <li className="nav-item"><div class="dropdown">
-                        <button class="btn btn-secondary nav-link active dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Servicios
+                        <button class="btn btn-success nav-link active dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Servicios</b> 
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mensajeria (-5K)</a></li>
-                            <li><a class="dropdown-item" href="#">Carga (+5K)</a></li>
-                            <li><a class="dropdown-item" href="#">Contra Entrega</a></li>
+                            <li><a class="dropdown-item" href="#"><b>Mensajeria (-5K)</b></a></li>
+                            <li><a class="dropdown-item" href="#"><b>Carga (+5K)</b></a></li>
+                            <li><a class="dropdown-item" href="#"><b>Contra Entrega</b></a></li>
                         </ul>
                         </div>
                         </li>
-                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!" onClick={handleOnClick}>Log in</a></li>
+                        <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm" href="#!" onClick={handleOnClick}><b> Log in</b></a></li>
                     </ul>
                 </div>
             </div>
