@@ -1,7 +1,6 @@
 import {React} from "react";
 import { Loggin } from "../Servicios/Servicios";
 import '../css/style.css';
-import freeImg from'../images/pngtree-free-delivery-icon-png-image_1922196.jpg';
 import { useNavigate } from "react-router-dom";
 import sloganImg from '../images/pngtree-free-shipping-label-with-chat-bulb-frame-png-image_3416174.jpg'
 
@@ -11,6 +10,7 @@ export const Header = () => {
         navigate("/");
     };
     
+    
     return (
     <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,10 +19,20 @@ export const Header = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse MenuListaNavbar" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item"><a className="nav-link active btn btn-primary btn-circle btn-sm" aria-current="page" href="#!">Menu principal</a></li>
-                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!">About</a></li>
-                        <li className="nav-item"><a className="nav-link btn btn-primary btn-circle btn-sm" href="#!">Contact</a></li>
-                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!" onClick={handleOnClick}>Services</a></li>
+                        <li className="nav-item"><a className="nav-link active btn btn-primary btn-circle btn-sm" aria-current="page" href="#!">Pagina principal</a></li>
+                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!">Sigue tu envio</a></li>
+                        <li className="nav-item"><div class="dropdown">
+                        <button class="btn btn-secondary nav-link active dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mensajeria (-5K)</a></li>
+                            <li><a class="dropdown-item" href="#">Carga (+5K)</a></li>
+                            <li><a class="dropdown-item" href="#">Contra Entrega</a></li>
+                        </ul>
+                        </div>
+                        </li>
+                        <li className="nav-item"><a className="nav-link btn btn-secondary btn-icon-split" href="#!" onClick={handleOnClick}>Log in</a></li>
                     </ul>
                 </div>
             </div>
