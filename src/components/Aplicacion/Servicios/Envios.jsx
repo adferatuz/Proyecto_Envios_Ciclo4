@@ -1,6 +1,7 @@
 import {React} from "react";
 import { useNavigate } from "react-router-dom";
-import {confirmarEnvio}from "./confirmacionEnvioFormulario"
+import ConfirmarEnvio from "./confirmacionEnvioFormulario"
+
 
 export const Envios = () => {
     const navigate = useNavigate();
@@ -111,8 +112,10 @@ export const Envios = () => {
                     <div className="margen">
                     <span><h3>Por favor llenar todos los espacios.</h3></span>
                     </div>
-                    <button type="button" class="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>
+                    <button type="button" class="btn btn-primary" onClick={()=>{ConfirmarEnvio()}}>Confirmar envio</button>
+                    
                     </div>
+                    
                 </div>
             </div>
             
