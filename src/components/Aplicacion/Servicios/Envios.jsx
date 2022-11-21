@@ -1,5 +1,6 @@
 import {React} from "react";
 import { useNavigate } from "react-router-dom";
+import {confirmarEnvio}from "./confirmacionEnvioFormulario"
 
 export const Envios = () => {
     const navigate = useNavigate();
@@ -15,8 +16,6 @@ export const Envios = () => {
         navigate2("/EstadoEnvios");
     };
     
-    
-
     return (
         <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,27 +35,27 @@ export const Envios = () => {
             <div className="navbar navbar-expand-lg margen">
                 <h1>Por favor diligencie el siguiente formulario</h1>
             </div>
-        <div class="container text-center">
-            <div class="row">
-            <div class="col-4">
+        <div className="container text-center">
+            <div className="row">
+            <div className="col-4">
                             <label htmlFor="iUsername"> <h6> Username</h6></label>
-                            <input id="iUsername" name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
+                            <input id="iUsername" name="username" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
                             <label htmlFor="iemail"><h6>Email</h6></label>
-                            <input type="email" class="form-control" placeholder="example@example.com" aria-label="email" aria-describedby="addon-wrapping" name="iemail" id="iemail"/>
+                            <input type="email" className="form-control" placeholder="example@example.com" aria-label="email" aria-describedby="addon-wrapping" name="iemail" id="iemail"/>
                             <label htmlFor="ipassword"><h6>Password</h6></label>
-                            <input id="ipassword" name="Password" type="Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping"/>
+                            <input id="ipassword" name="Password" type="Password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping"/>
                         </div>
 
-                <div class="col-4">
+                <div className="col-4">
                             <h6 id="margen">Digite fecha y hora para atender al personal del envio</h6>
                             <label htmlFor="itime"><h6>Tiempo</h6></label>
-                            <input id="itime" type="time" class="form-control"   aria-describedby="addon-wrapping"/>
+                            <input id="itime" type="time" className="form-control"   aria-describedby="addon-wrapping"/>
                             <label htmlFor="idate"><h6>Fecha</h6></label>
                             <input id="idate" className="form-control" type="date" min="2021-01-01" max="2023-12-31" />
                         
                         </div>
                
-                <div class="col-2"><h6>Datos del envio en cm</h6>
+                <div className="col-2"><h6>Datos del envio en cm</h6>
                     <label htmlFor="ialto"><h6>Alto</h6></label>
                     <input type="text" className="form-control" id="ialto" />
                     <label htmlFor="iancho"><h6>Ancho</h6></label>
@@ -64,14 +63,14 @@ export const Envios = () => {
                     <label htmlFor="ilargo"><h6>Largo</h6></label>
                     <input type="text" className="form-control" id="ilargo" />
                 </div>
-                <div class="col-2"><h6>Mercancia delicada?</h6>
+                <div className="col-2"><h6>Mercancia delicada?</h6>
                     
-                    <div class="input-group mb-3">
+                    <div className="input-group mb-3">
                     
-                    <select class="form-select" id="inputGroupSelect01">
+                    <select className="form-select" id="inputGroupSelect01">
                         <option selected>Elige</option>
-                        <option value="1">Si</option>
-                        <option value="2">No</option>
+                        <option defaultValue="1">Si</option>
+                        <option defaultValue="2">No</option>
                         
                     </select>
                     </div>
@@ -80,18 +79,43 @@ export const Envios = () => {
                     
                 </div>
             </div>
-            <div className="row form-control">
-                <div className="col-4">
-                <label htmlFor="iciudadRecogida"><h6>Direccion de recogida</h6></label>
-                    <input type="text" className="form-control" id="ialto" />
-                    <label htmlFor="iancho"><h6>Ancho</h6></label>
-                    <input type="text" className="form-control" id="iancho" />
-                    <label htmlFor="ilargo"><h6>Largo</h6></label>
-                    <input type="text" className="form-control" id="ilargo" />
-
+            <div class="container text-center fondo">
+                <div class="row">
+                    <div class="col">
+                    <label htmlFor="iciudadRecogida"><h6>Direccion de remitente</h6></label>
+                    <input type="text" className="form-control" id="iciudadRecogida" />
+                    <label htmlFor="iciudadRem"><h6>Ciudad remitente</h6></label>
+                    <input type="text" className="form-control" id="iciudadRem" />
+                    <label htmlFor="iIdRemitente"><h6>Numero identificacion del remitente</h6></label>
+                    <input type="text" className="form-control" id="iIdRemitente" />
+                    <span ><h6>Nombre y Apellido del remitente</h6></span>
+                    <div class="input-group">                                      
+                    <input type="text" aria-label="First name" className="form-control" />
+                    <input type="text" aria-label="Last name" className="form-control" />
                 </div>
-
+                    </div>
+                <div class="col">                    
+                <label htmlFor="iDireccionLlegada"><h6>Direccion de llegada</h6></label>
+                    <input type="text" className="form-control" id="iDireccionLlegada" />
+                    <label htmlFor="iciudadLlegada"><h6>Ciudad Llegada</h6></label>
+                    <input type="text" className="form-control" id="iciudadLlegada" />
+                    <label htmlFor="iIdRecibe"><h6>Numero identificacion del que recibe</h6></label>
+                    <input type="text" className="form-control" id="iIdRecibe" />
+                    <span ><h6>Nombre y Apellido del que recibe</h6></span>
+                    <div class="input-group">                                      
+                    <input type="text" aria-label="First name" className="form-control" />
+                    <input type="text" aria-label="Last name" className="form-control" />
+                </div>
+                    </div>
+                    <div class="col">
+                    <div className="margen">
+                    <span><h3>Por favor llenar todos los espacios.</h3></span>
+                    </div>
+                    <button type="button" class="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>
+                    </div>
+                </div>
             </div>
+            
            
         </div>
         </div>

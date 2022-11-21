@@ -1,5 +1,6 @@
 import {React} from "react";
 import { useNavigate } from "react-router-dom";
+import imgFondo from '../images/istockphoto-1132930101-612x612.jpg'
 
 export const EstadoEnvios = () => {
     const navigate = useNavigate();
@@ -21,6 +22,27 @@ export const EstadoEnvios = () => {
                 </div>
             </div>
         </nav>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                    Column
+                    </div>
+                    <div class="col">
+                    <div class="input-group mb-3 margen">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Digite el codigo de seguimiento" aria-label="Username" aria-describedby="basic-addon1"/>
+                        <button type="button" class="btn btn-success">Consultar Estado</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                    Column
+                    </div>
+                </div>
+            </div>
+            <div className="container fondo space">
+                <img src={imgFondo} alt="" />
+
+            </div>
         </>
     );
 };
