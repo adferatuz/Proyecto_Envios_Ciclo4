@@ -37,8 +37,10 @@ export const Envios = () => {
                 <h1>Por favor diligencie el siguiente formulario</h1>
             </div>
         <div className="container text-center">
-            <div className="row">
-            <div className="col-4">
+            <form action="">
+                <div className="row">
+                    <div className="col-4">
+                
                             <label htmlFor="iUsername"> <h6> Username</h6></label>
                             <input id="iUsername" name="username" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
                             <label htmlFor="iemail"><h6>Email</h6></label>
@@ -117,10 +119,12 @@ export const Envios = () => {
                     </div>
                     
                 </div>
+                
             </div>
-            
            
-        </div>
+            
+            </form>  
+            </div>        
         </div>
         </>
     );
