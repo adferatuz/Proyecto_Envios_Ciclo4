@@ -69,7 +69,7 @@ export const Envios = () => {
                     <div className="input-group mb-3">
                     
                     <select className="form-select" id="inputGroupSelect01">
-                        <option selected>Elige</option>
+                        <option select ="true">Elige</option>
                         <option defaultValue="1">Si</option>
                         <option defaultValue="2">No</option>
                         
@@ -80,9 +80,9 @@ export const Envios = () => {
                     
                 </div>
             </div>
-            <div class="container text-center fondo">
-                <div class="row">
-                    <div class="col">
+            <div className="container text-center fondo">
+                <div className="row">
+                    <div className="col">
                     <label htmlFor="iciudadRecogida"><h6>Direccion de remitente</h6></label>
                     <input type="text" className="form-control" id="iciudadRecogida" />
                     <label htmlFor="iciudadRem"><h6>Ciudad remitente</h6></label>
@@ -90,12 +90,12 @@ export const Envios = () => {
                     <label htmlFor="iIdRemitente"><h6>Numero identificacion del remitente</h6></label>
                     <input type="text" className="form-control" id="iIdRemitente" />
                     <span ><h6>Nombre y Apellido del remitente</h6></span>
-                    <div class="input-group">                                      
+                    <div className="input-group">                                      
                     <input type="text" aria-label="First name" className="form-control" />
                     <input type="text" aria-label="Last name" className="form-control" />
                 </div>
                     </div>
-                <div class="col">                    
+                <div className="col">                    
                 <label htmlFor="iDireccionLlegada"><h6>Direccion de llegada</h6></label>
                     <input type="text" className="form-control" id="iDireccionLlegada" />
                     <label htmlFor="iciudadLlegada"><h6>Ciudad Llegada</h6></label>
@@ -103,16 +103,16 @@ export const Envios = () => {
                     <label htmlFor="iIdRecibe"><h6>Numero identificacion del que recibe</h6></label>
                     <input type="text" className="form-control" id="iIdRecibe" />
                     <span ><h6>Nombre y Apellido del que recibe</h6></span>
-                    <div class="input-group">                                      
+                    <div className="input-group">                                      
                     <input type="text" aria-label="First name" className="form-control" />
                     <input type="text" aria-label="Last name" className="form-control" />
                 </div>
                     </div>
-                    <div class="col">
+                    <div className="col">
                     <div className="margen">
                     <span><h3>Por favor llenar todos los espacios.</h3></span>
                     </div>
-                    <button type="button" class="btn btn-primary" onClick={()=>{ConfirmarEnvio()}}>Confirmar envio</button>
+                    <button type="button" className="btn btn-primary" onClick={()=>{ConfirmarEnvio()}}>Confirmar envio</button>
                     
                     </div>
                     
