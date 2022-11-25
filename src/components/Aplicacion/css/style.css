@@ -31,3 +31,8 @@
 .space{
     width: 100%;
 }
+
+.modal{
+    display:flow-root;
+    
+}

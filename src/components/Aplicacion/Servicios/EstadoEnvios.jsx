@@ -22,19 +22,19 @@ export const EstadoEnvios = () => {
                 </div>
             </div>
         </nav>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
+            <div className="container text-center">
+                <div className="row">
+                    <div className="col">
                     Column
                     </div>
-                    <div class="col">
-                    <div class="input-group mb-3 margen">
-                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Digite el codigo de seguimiento" aria-label="Username" aria-describedby="basic-addon1"/>
-                        <button type="button" class="btn btn-success">Consultar Estado</button>
+                    <div className="col">
+                    <div className="input-group mb-3 margen">
+                        <span className="input-group-text" id="basic-addon1"><i className="bi bi-search"></i></span>
+                        <input type="text" className="form-control" placeholder="Digite el codigo de seguimiento" aria-label="Username" aria-describedby="basic-addon1"/>
+                        <button type="button" className="btn btn-success">Consultar Estado</button>
                         </div>
                     </div>
-                    <div class="col">
+                    <div className="col">
                     Column
                     </div>
                 </div>

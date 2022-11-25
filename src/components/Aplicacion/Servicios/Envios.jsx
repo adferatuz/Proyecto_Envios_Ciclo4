@@ -1,6 +1,6 @@
-import {React} from "react";
+import {React, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import ConfirmarEnvio from "./confirmacionEnvioFormulario"
+import ModalEnviado from "./confirmacionEnvioFormulario"
 
 
 export const Envios = () => {
@@ -16,6 +16,14 @@ export const Envios = () => {
     const handleOnClick2 = () => {
         navigate2("/EstadoEnvios");
     };
+
+    const confirmarEnvio = ()=>{
+        console.log('confirmar envio');
+        setMostrar (true);
+    }
+
+    const [mostrar, setMostrar] = useState (false);
+    
     
     return (
         <>
@@ -114,16 +122,12 @@ export const Envios = () => {
                     <div className="margen">
                     <span><h3>Por favor llenar todos los espacios.</h3></span>
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={()=>{ConfirmarEnvio()}}>Confirmar envio</button>
-                    
-                    </div>
-                    
-                </div>
-                
-            </div>
-           
-            
-            </form>  
+                    <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>                   
+                    </div>                    
+                </div>                
+            </div>            
+            </form>
+            { mostrar ? <ModalEnviado/> : ''}  
             </div>        
         </div>
         </>
