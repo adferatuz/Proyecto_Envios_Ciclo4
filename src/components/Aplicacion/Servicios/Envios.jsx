@@ -21,6 +21,10 @@ export const Envios = () => {
         console.log('confirmar envio');
         setMostrar (true);
     }
+    const handleClickChild = () => {
+        setMostrar(false)
+        console.log('cerrar'+''+setMostrar)
+    }
 
     const [mostrar, setMostrar] = useState (false);
     
@@ -127,7 +131,7 @@ export const Envios = () => {
                 </div>                
             </div>            
             </form>
-            { mostrar ? <ModalEnviado/> : ''}  
+            { mostrar ? <ModalEnviado vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}  
             </div>        
         </div>
         </>
