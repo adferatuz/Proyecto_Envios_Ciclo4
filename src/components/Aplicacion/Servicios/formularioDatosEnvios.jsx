@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 
 const FormDatosEnvios = ({vista, handleClickChild}) => {
-    useEffect(() =>{ 
-        console.log('useEffect')        
+    useEffect(() =>{         
     },[vista])
     
     const handleClick = () => {
         handleClickChild();
-        console.log('Hice click')
 
     }
     return(

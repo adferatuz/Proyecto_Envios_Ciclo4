@@ -3,15 +3,12 @@ import { useEffect } from "react";
 
 
 const  ModalEnviado = ({vista, handleClickChild})=> {
-    useEffect(() =>{ 
-        console.log('useEffect')
-        
+    useEffect(() =>{         
     },[vista])
     const handleClick = () => {
         handleClickChild();
-        console.log('Hice click')
-
     }
+
     return (
          
         <div className="modal fondo-modal" tabIndex="-1">

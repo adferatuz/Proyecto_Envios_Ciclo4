@@ -2,6 +2,7 @@ import {React, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import ModalEnviado from "./confirmacionEnvioFormulario";
 import FormDatosEnvios from './formularioDatosEnvios';
+import FormDatosRecibe from "./formDatosRecibe";
 
 
 export const Envios = () => {
@@ -19,16 +20,26 @@ export const Envios = () => {
     };
 
     const confirmarEnvio = ()=>{
-        console.log('confirmar envio');
-        setMostrar (true);
+        setMostrar(1);          
     }
+
+    const confirmarEnvio2 = ()=>{
+        setMostrar(2);          
+    }
+
+    const confirmarEnvio3 = ()=>{
+        setMostrar(3);          
+    }
+
     const handleClickChild = () => {
-        setMostrar(false)
+        setMostrar(0)
         console.log('cerrar'+''+setMostrar)
     }
 
-    const [mostrar, setMostrar] = useState (false);
-    
+    const [mostrar, setMostrar] = useState (0);
+    const formDatosPer = 1;
+    const formDatosEnv = 2;
+    const formDatosRec = 3;
     
     return (
         <>
@@ -54,43 +65,21 @@ export const Envios = () => {
                     <div className="col-4">                
                         <i className="bi bi-brightness-alt-high-fill"></i>
                         <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Por favor ingrese sus datos perosnales.</button>
-                        { mostrar ? <ModalEnviado vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}  
+                        { formDatosPer === mostrar ? <ModalEnviado vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}  
                     </div>
                     <div className="col-4">
                         <i className="bi bi-brightness-alt-high-fill"></i>
-                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Por favor digite los datos del envio.</button> 
-                        { mostrar ? <FormDatosEnvios vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}                   
+                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio2()}}>Por favor digite los datos del envio.</button> 
+                        { formDatosEnv === mostrar ? <FormDatosEnvios vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}
                     </div>               
                     <div className="col-4">
                         <i className="bi bi-brightness-alt-high-fill"></i>
-                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Por favor digite los datos del envio.</button>
+                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio3()}}>Por favor digite los datos del envio.</button>
+                        { formDatosRec === mostrar ? <FormDatosRecibe vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''} 
                     </div>               
                 </div>
             <div className="container text-center fondo">
-                <div className="row">
-                    <div className="col">
-                   
-                </div>
-                <div className="col">                    
-                    <label htmlFor="iDireccionLlegada"><h6>Direccion de llegada</h6></label>
-                    <input type="text" className="form-control" id="iDireccionLlegada" />
-                    <label htmlFor="iciudadLlegada"><h6>Ciudad Llegada</h6></label>
-                    <input type="text" className="form-control" id="iciudadLlegada" />
-                    <label htmlFor="iIdRecibe"><h6>Numero identificacion del que recibe</h6></label>
-                    <input type="text" className="form-control" id="iIdRecibe" />
-                    <span ><h6>Nombre y Apellido del que recibe</h6></span>
-                    <div className="input-group">                                      
-                        <input type="text" aria-label="First name" className="form-control" id="iNombre" />
-                        <input type="text" aria-label="Last name" className="form-control" id="iApellido" />
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="margen">
-                        <span><h3>Por favor llenar todos los espacios.</h3></span>
-                        </div>
-                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>                   
-                    </div>                    
-                </div>                
+                               
             </div>            
             
               
