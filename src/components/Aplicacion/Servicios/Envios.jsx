@@ -51,16 +51,14 @@ export const Envios = () => {
         <div className="container text-center">
             <form action="">
                 <div className="row">
-                    <div className="col-4">
-                
-                            <label htmlFor="iUsername"> <h6> Username</h6></label>
-                            <input id="iUsername" name="username" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
-                            <label htmlFor="iemail"><h6>Email</h6></label>
-                            <input type="email" className="form-control" placeholder="example@example.com" aria-label="email" aria-describedby="addon-wrapping" name="iemail" id="iemail"/>
-                            <label htmlFor="ipassword"><h6>Password</h6></label>
-                            <input id="ipassword" name="Password" type="Password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping"/>
-                        </div>
-
+                    <div className="col-4">                
+                        <label htmlFor="iUsername"> <h6> Username</h6></label>
+                        <input id="iUsername" name="username" type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
+                        <label htmlFor="iemail"><h6>Email</h6></label>
+                        <input type="email" className="form-control" placeholder="example@example.com" aria-label="email" aria-describedby="addon-wrapping" name="iemail" id="iemail"/>
+                        <label htmlFor="ipassword"><h6>Password</h6></label>
+                        <input id="ipassword" name="Password" type="Password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping"/>
+                    </div>
                 <div className="col-4">
                             <h6 id="margen">Digite fecha y hora para atender al personal del envio</h6>
                             <label htmlFor="itime"><h6>Tiempo</h6></label>
@@ -105,12 +103,12 @@ export const Envios = () => {
                     <input type="text" className="form-control" id="iIdRemitente" />
                     <span ><h6>Nombre y Apellido del remitente</h6></span>
                     <div className="input-group">                                      
-                    <input type="text" aria-label="First name" className="form-control" />
-                    <input type="text" aria-label="Last name" className="form-control" />
-                </div>
+                        <input type="text" aria-label="First name" className="form-control" />
+                        <input type="text" aria-label="Last name" className="form-control" />
                     </div>
+                </div>
                 <div className="col">                    
-                <label htmlFor="iDireccionLlegada"><h6>Direccion de llegada</h6></label>
+                    <label htmlFor="iDireccionLlegada"><h6>Direccion de llegada</h6></label>
                     <input type="text" className="form-control" id="iDireccionLlegada" />
                     <label htmlFor="iciudadLlegada"><h6>Ciudad Llegada</h6></label>
                     <input type="text" className="form-control" id="iciudadLlegada" />
@@ -118,15 +116,15 @@ export const Envios = () => {
                     <input type="text" className="form-control" id="iIdRecibe" />
                     <span ><h6>Nombre y Apellido del que recibe</h6></span>
                     <div className="input-group">                                      
-                    <input type="text" aria-label="First name" className="form-control" />
-                    <input type="text" aria-label="Last name" className="form-control" />
+                        <input type="text" aria-label="First name" className="form-control" />
+                        <input type="text" aria-label="Last name" className="form-control" />
+                    </div>
                 </div>
-                    </div>
-                    <div className="col">
+                <div className="col">
                     <div className="margen">
-                    <span><h3>Por favor llenar todos los espacios.</h3></span>
-                    </div>
-                    <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>                   
+                        <span><h3>Por favor llenar todos los espacios.</h3></span>
+                        </div>
+                        <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Confirmar envio</button>                   
                     </div>                    
                 </div>                
             </div>            
