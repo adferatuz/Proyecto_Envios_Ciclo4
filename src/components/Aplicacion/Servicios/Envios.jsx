@@ -78,11 +78,8 @@ export const Envios = () => {
                         { formDatosRec === mostrar ? <FormDatosRecibe vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''} 
                     </div>               
                 </div>
-            <div className="container text-center fondo">
-                               
-            </div>            
-            
-              
+            <div className="container text-center fondo"> 
+            </div>                         
             </div>        
         </div>
         </>

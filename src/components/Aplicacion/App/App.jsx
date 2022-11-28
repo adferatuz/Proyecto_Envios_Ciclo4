@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Loggin } from "../Servicios/Loggin";
 import { Envios } from "../Servicios/Envios";
 import { EstadoEnvios } from "../Servicios/EstadoEnvios";
-import styled from "styled-components";
+import '../css/style-envios.css';
 
 
 export const Actualizable = () => {
