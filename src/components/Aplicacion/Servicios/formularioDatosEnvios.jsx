@@ -95,8 +95,9 @@ const FormDatosEnvios = ({vista, handleClickChild}) => {
 
                         </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Close</button>
-                                <button type="submit" className="btn btn-primary">Save changes</button>
+                                <button type="submit" className="btn btn-primary">Guardar</button>
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Cerrar</button>
+                                
                             </div>   
                         </div>
                     </form>   

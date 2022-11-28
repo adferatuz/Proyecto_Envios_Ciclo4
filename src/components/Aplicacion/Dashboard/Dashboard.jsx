@@ -24,16 +24,12 @@ export const Header = () => {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm " aria-current="page" href="#!"><b>Pagina principal</b></a></li>
                         
-                        <li className="nav-item"><div class="dropdown">
-                        <button class="btn btn-success nav-link active dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>Envios</b> 
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Mensajeria (-5K)</b></a></li>
-                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Carga (+5K)</b></a></li>
-                            <li><a class="dropdown-item" href="#" onClick={handleOnClick1}><b>Contra Entrega</b></a></li>
-                        </ul>
-                        </div>
+                        <li className="nav-item">
+                            <div class="active">
+                                <button class="btn btn-success nav-link active  " type="button"  aria-expanded="false" onClick={handleOnClick1}>
+                                <b>Envios</b> 
+                                </button>                            
+                            </div>
                         </li>
                         <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm" href="#!" onClick={handleOnClick}><b> Log in</b></a></li>
                     </ul>
