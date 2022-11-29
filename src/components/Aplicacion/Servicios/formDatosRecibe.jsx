@@ -6,7 +6,10 @@ const FormDatosRecibe = ({vista, handleClickChild}) => {
     },[vista])
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (data) =>{console.log(data)};
+    
+    const customSubmit = (dataForm) =>{
+        console.log(dataForm)
+    };
 
     const handleClick = () => {
         handleClickChild();

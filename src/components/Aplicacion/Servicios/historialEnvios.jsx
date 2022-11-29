@@ -5,35 +5,47 @@ const HistorialEnvios = ({vista, handleClickChild}) => {
     useEffect(() =>{         
     },[vista])
 
+    const labels = [
+        'Id',
+        'Codigo',
+        'Fecha de envio',
+        'Remitente',
+        'Estado del envio',    
+    ]
+
+    const datos =[{
+        id: 1,
+        codigo: 2234325,
+        fechaEnvio: '09/11/2022',
+        remitente: 'Adrian fernandez',
+        estadoEnvio: 'En espera'
+    }]
+
     return (
         <>
         <table className="table table-warning">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                    {labels.map((labels, index) => {
+                        return (<th key={index} scope="col">{labels}</th>)
+                    })}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                {datos.map((datos, index) => {
+                    return (
+                        <tr key={index}>
+                            <th scope="row">{datos.id}</th>
+                            <td>{datos.codigo}</td>
+                            <td>{datos.fechaEnvio}</td>
+                            <td>{datos.remitente}</td>
+                            <td>{datos.estadoEnvio}</td>
+                        </tr>
+                    )
+                })}
+                
+               
+                
             </tbody>
         </table>
         </>
