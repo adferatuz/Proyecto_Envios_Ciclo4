@@ -1,0 +1,20 @@
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+let usuarioSchema = new Schema ({
+    userName: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true
+    }
+},{
+    collection:'loggin'
+})
+module.exports = mongoose.model('formLoggin',usuarioSchema)

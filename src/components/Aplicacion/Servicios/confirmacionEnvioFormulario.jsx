@@ -29,61 +29,26 @@ const  ModalEnviado = ({vista, handleClickChild})=> {
                 <div className="modal-body">
                 <form action="" onSubmit={handleSubmit(customSubmit)} >
                     <div className="col form-envio__datos"> 
-
-                        <label htmlFor="username"> <h6> Usuario</h6></label>
-                        <input {...register("username", { required: true, maxLength:15 })}
-                        aria-invalid = {errors.username ? "true": "false"}
-                        id="username" 
-                        name="username" 
-                        type="text" 
-                        className="form-control "
-                        placeholder="Username"
-                        aria-label="username" 
-                        aria-describedby="addon-wrapping"/>
-                        {errors.username && <span>This field is required. Max length 15<br /></span>}
-
-                        <label htmlFor="email"><h6>Correo electronico</h6></label>
-                        <input {...register("email", { required: true })}
-                        aria-invalid = {errors.email ? "true": "false"}
-                        type="email"
-                        className="form-control" 
-                        placeholder="example@example.com" 
-                        aria-label="email" 
-                        aria-describedby="addon-wrapping"
-                        name="email" 
-                        id="email"/>
-                        {errors.email && <span>This field is required <br /></span>}
-
-                        <label htmlFor="Password"><h6>Contraseña</h6></label>
-                        <input {...register("Password", { required: true })}
-                        aria-invalid = {errors.Password ? "true": "false"} 
-                        id="Password" 
-                        name="Password" 
-                        type="Password" 
-                        className="form-control" 
-                        placeholder="Password" 
-                        aria-label="Password" 
-                        aria-describedby="addon-wrapping"/>
-                        {errors.Password && <span>This field is required <br /></span>}
-
                     </div>
                     <div className="col form-envio__datos">
-                        <label htmlFor="ciudadRecogida"><h6>Direccion de remitente</h6></label>
-                        <input {...register("ciudadRecogida", { required: true })}
-                        aria-invalid = {errors.ciudadRecogida ? "true": "false"}
+                        <label htmlFor="direccionRemitente"><h6>Direccion de remitente</h6></label>
+                        <input {...register("direccionRemitente", { required: true })}
+                        aria-invalid = {errors.direccionRemitente ? "true": "false"}
                         type="text" 
                         className="form-control" 
-                        id="ciudadRecogida" />
-                        {errors.ciudadRecogida && <span>This field is required <br /></span>}
+                        id="direccionRemitente"
+                        name="direccionRemitente" />
+                        {errors.direccionRemitente && <span>This field is required <br /></span>}
 
 
-                        <label htmlFor="ciudadRem"><h6>Ciudad remitente</h6></label>
-                        <input {...register("ciudadRem", { required: true })}
-                        aria-invalid = {errors.ciudadRem ? "true": "false"} 
+                        <label htmlFor="ciudadRemitente"><h6>Ciudad remitente</h6></label>
+                        <input {...register("ciudadRemitente", { required: true })}
+                        aria-invalid = {errors.ciudadRemitente ? "true": "false"} 
                         type="text" 
                         className="form-control" 
-                        id="iciudadRem" />
-                        {errors.ciudadRem && <span>This field is required <br /></span>}
+                        id="ciudadRemitente" 
+                        name="ciudadRemitente"/>
+                        {errors.ciudadRemitente && <span>This field is required <br /></span>}
 
                         <label htmlFor="IdRemitente"><h6>Numero identificacion del remitente</h6></label>
                         <input {...register("IdRemitente", { required: true })}

@@ -1,11 +1,19 @@
-import {React} from "react";
+import {React, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import imgCarrousel1 from '../images/images (1).jfif'
 import imgCarrousel2 from '../images/1154103408.jpg'
 import imgCarrousel3 from '../images/istockphoto-1132930101-612x612.jpg'
 import '../css/style.css';
+import FormLoggin from "./formLoggin";
+import { useForm } from "react-hook-form";
+
 
 export const Loggin = () => {
+    const [mostrar, setMostrar] = useState (false);
+    const {register, formState: {errors}, handleSubmit} = useForm ();
+    const customSubmit = (dataForms) =>{console.log(dataForms)};
+
+
     const navigate = useNavigate();
     const handleOnClick = () => {
         navigate("/");
@@ -14,6 +22,13 @@ export const Loggin = () => {
     const handleOnClick1 = () => {
         navigate1("/EstadoEnvios");
     };
+
+    const handleShowFormClick = () => {
+        setMostrar(true)
+    }
+    const handleClickChild = () => {
+        setMostrar(false)
+    }
 
     return (
         <>
@@ -33,13 +48,43 @@ export const Loggin = () => {
         </nav>
         <div className="container">
             <div className="col-md-4 mb-5 item">
-                    <div className="card h-100">
+            
+                    <div className="card h-100 form-envio__datos">
+                    <form action="" onSubmit={handleSubmit(customSubmit)} >
                         <div className="card-body col-sm-9 bg-light p-3 border">
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"/>
-                            <input type="Password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping"/>
+                            <input {...register("LogginUsername", { required: true, maxLength:15 })}
+                            aria-invalid = {errors.LogginUsername ? "true": "false"}
+                            type="text" 
+                            id="LogginUsername" 
+                            name="LogginUsername" 
+                            className="form-control" 
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="addon-wrapping"/>
+                            {errors.LogginUsername && <span>This field is required. Max length 15<br /></span>}
+                            
+
+                            <input {...register("LogginPassword", { required: true })}
+                            aria-invalid = {errors.LogginPassword ? "true": "false"}
+                            type="Password" 
+                            id="LogginPassword"
+                            name="LogginPassword"
+                            className="form-control" 
+                            placeholder="Password" 
+                            aria-label="Password" 
+                            aria-describedby="addon-wrapping"/>
+                            {errors.LogginPassword && <span>This field is required <br /></span>}
                         </div>
-                        <div className="card-footer"><button type="button" className="btn btn-success">Success</button></div>
+                        <div className="col-2">
+                            <button type="submit" className="btn btn-primary" >Success</button>
+                            </div>
+                        </form>                            
+                            <div className="col">
+                            <button type="button" className="btn btn-warning" onClick={()=> {handleShowFormClick()}}>Crear usuario</button>
+                            {mostrar ? <FormLoggin vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}
+                            </div>   
                     </div>
+                    
                 </div>
                 
                 <div className="col-md-4 mb-5 item" id="item1">

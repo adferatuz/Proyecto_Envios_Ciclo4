@@ -56,24 +56,24 @@ const FormDatosRecibe = ({vista, handleClickChild}) => {
 
                         <p><b>Nombre de quien recibe</b></p>
                         <div className="">                                      
-                            <input {...register("iNombre", { required: true })}
-                            aria-invalid = {errors.iNombre ? "true": "false"}
+                            <input {...register("nombreRecibe", { required: true })}
+                            aria-invalid = {errors.nombreRecibe ? "true": "false"}
                             type="text" 
                             aria-label="First name" 
                             className="form-control" 
-                            id="iNombre"
-                            name="iNombre" />
-                            {errors.iNombre && <span>This field is required <br /></span>}
+                            id="nombreRecibe"
+                            name="nombreRecibe" />
+                            {errors.nombreRecibe && <span>This field is required <br /></span>}
 
                             <p><b>Apellido de quien recibe</b></p>
-                            <input {...register("iApellido", { required: true })}
-                            aria-invalid = {errors.iApellido ? "true": "false"} 
+                            <input {...register("apellidoRecibe", { required: true })}
+                            aria-invalid = {errors.apellidoRecibe ? "true": "false"} 
                             type="text" 
                             aria-label="Last name" 
                             className="form-control" 
-                            id="iApellido"
-                            name="iApellido" />
-                            {errors.iApellido && <span>This field is required <br /></span>}
+                            id="apellidoRecibe"
+                            name="apellidoRecibe" />
+                            {errors.apellidoRecibe && <span>This field is required <br /></span>}
 
                         </div>
                     </div>
