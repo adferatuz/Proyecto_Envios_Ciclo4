@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 
 
 const FormLoggin =  ({vista,handleClickChild})=> {
@@ -11,7 +12,11 @@ const FormLoggin =  ({vista,handleClickChild})=> {
     }
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit1 = (dataForms) =>{console.log(dataForms)};
+    const customSubmit1 = (dataForms) =>{
+        axios
+            .post("http://localhost:4000/loggin/create", dataForms)
+            .then(response => console.log(response.data))
+        console.log(dataForms)};
 
     return (
         <div className="modal fondo-modal" tabIndex="-1">

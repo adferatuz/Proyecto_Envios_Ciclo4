@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let DatosRemitenteSchema = new Schema ({
+let remitenteSchema = new Schema ({
     direccionRemitente: {
         type: String,
         required: true,
@@ -21,12 +21,8 @@ let DatosRemitenteSchema = new Schema ({
     lastName: {
         type: String,
         required: true, 
-    },
-    
-
-
-
+    }
 },{
-    colection:'Datos remitente'
+    colection:'DatosRemitente'
 })
-module.exports = mongoose.model('FormDatosRemitente',DatosRemitenteSchema)
+module.exports = mongoose.model('FormDatosRemitentes',remitenteSchema)

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let DatosEnviosSchema = new Schema ({
+let datosEnviosSchema = new Schema ({
     time: {
-        type: TimeRanges,
+        type: String,
         required: true,
     },
     date: {
-        type: Date,
+        type: String,
         required: true, 
     },
     alto: {
@@ -30,4 +30,4 @@ let DatosEnviosSchema = new Schema ({
 },{
     colection:'Datos Envio'
 })
-module.exports = mongoose.model('FormDatosEnvio',DatosEnviosSchema)
+module.exports = mongoose.model('FormDatosEnvio',datosEnviosSchema)

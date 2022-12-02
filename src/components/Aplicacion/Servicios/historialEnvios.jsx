@@ -1,28 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const labels = [
+    'Id',
+    'Codigo',
+    'Fecha de envio',
+    'Remitente',
+    'Estado del envio',    
+]
+
+const datos =[{
+    id: 1,
+    codigo: 2234325,
+    fechaEnvio: '09/11/2022',
+    remitente: 'Adrian fernandez',
+    estadoEnvio: 'En espera'
+}]
 
 const HistorialEnvios = ({vista, handleClickChild}) => {
-
+    
+    const [datos, setDatos] = useState(null)
     useEffect(() =>{         
     },[vista])
 
-    const labels = [
-        'Id',
-        'Codigo',
-        'Fecha de envio',
-        'Remitente',
-        'Estado del envio',    
-    ]
-
-    const datos =[{
-        id: 1,
-        codigo: 2234325,
-        fechaEnvio: '09/11/2022',
-        remitente: 'Adrian fernandez',
-        estadoEnvio: 'En espera'
-    }]
+    
 
     return (
         <>
+        {datos ?
         <table className="table table-warning">
             <thead>
                 <tr>
@@ -32,7 +36,7 @@ const HistorialEnvios = ({vista, handleClickChild}) => {
                 </tr>
             </thead>
             <tbody>
-                {datos.map((datos, index) => {
+                { datos.map((datos, index) => {
                     return (
                         <tr key={index}>
                             <th scope="row">{datos.id}</th>
@@ -42,12 +46,11 @@ const HistorialEnvios = ({vista, handleClickChild}) => {
                             <td>{datos.estadoEnvio}</td>
                         </tr>
                     )
-                })}
-                
-               
-                
+                }) }
+                   
             </tbody>
         </table>
+         : ''}
         </>
     )
 

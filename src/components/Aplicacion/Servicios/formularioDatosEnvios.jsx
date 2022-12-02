@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 
 const FormDatosEnvios = ({vista, handleClickChild}) => {
     useEffect(() =>{         
     },[vista])
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{console.log(dataForms)};
+    const customSubmit = (dataForms) =>{
+        axios
+            .post("http://localhost:4000/envios/create", dataForms)
+            .then(response => console.log(response.data))
+        
+        console.log(dataForms)};
     
     const handleClick = () => {
         handleClickChild();

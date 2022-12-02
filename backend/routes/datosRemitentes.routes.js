@@ -2,15 +2,14 @@ let mongoose = require('mongoose'),
     express = require('express'),
     router = express.Router()
 
-let usuarioSchema = require('../models/formLoggin')
+let remitenteSchema = require('../models/FormDatosRemitentes')
 
 // CRUD
 
-//
-// create login
-// localhost:4000/loggin/create
+// create formulario datos remitente
+// localhost:4000/remitente/create
 router.route('/create').post((req, res, next)=>{
-    usuarioSchema.create(req.body,(error, data) => {
+    remitenteSchema.create(req.body,(error, data) => {
         if (error){
             return next(error)
         } else{
@@ -19,22 +18,22 @@ router.route('/create').post((req, res, next)=>{
     })
 })
 
-// Read login
-// localhost:4000/loggin/read
-router.route('/read').get((req, res, next)=>{
-    usuarioSchema.find((error, data)=> {
-        if (error){
+// Read envios
+// localhost:4000/remitente/read/:id
+router.route('/read/:id').get((req, res, next) => {
+    remitenteSchema.findById(req.params.id, (error, data) => {
+        if (error) {
             return next(error)
-        } else{
+        } else {
             res.json(data)
-        } 
+        }
     })
 })
 
 //Update login
-// localhost:4000/loggin/update/:id
+// localhost:4000/remitente/update/:id
 router.route('/update/:id').put((req, res, next)=>{
-    usuarioSchema.findByIdAndUpdate(req.params.id,{
+    remitenteSchema.findByIdAndUpdate(req.params.id,{
         $set: req.body
     },
          (error, data)=> {
@@ -47,9 +46,9 @@ router.route('/update/:id').put((req, res, next)=>{
 })
 
 //Delete login
-// localhost:4000/loggin/delete/:id
+// localhost:4000/remitente//delete/:id
 router.route('/delete/:id').delete((req, res, next)=>{
-    usuarioSchema.findByIdAndDelete(req.params.id,(error, data)=> {
+    remitenteSchema.findByIdAndDelete(req.params.id,(error, data)=> {
         if (error){
             return next(error)
         } else{
@@ -61,5 +60,3 @@ router.route('/delete/:id').delete((req, res, next)=>{
 })
 
 module.exports = router
-
-

@@ -1,6 +1,7 @@
 import {React} from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios"
 
 
 
@@ -9,14 +10,18 @@ const  ModalEnviado = ({vista, handleClickChild})=> {
     },[vista])
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{console.log(dataForms)};
+
+    const customSubmit = (dataForms) =>{
+        axios
+            .post("http://localhost:4000/remitentes/create", dataForms)
+            .then(response => console.log(response.data))
+        console.log(dataForms)};
      
 
     const handleClick = () => {
         handleClickChild();
     }
     
-
     return (
          
         <div className="modal fondo-modal" tabIndex="-1">

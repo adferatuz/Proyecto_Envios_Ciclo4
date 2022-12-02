@@ -8,10 +8,13 @@ import FormLoggin from "./formLoggin";
 import { useForm } from "react-hook-form";
 
 
+
 export const Loggin = () => {
     const [mostrar, setMostrar] = useState (false);
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{console.log(dataForms)};
+    const customSubmit = (dataForms) =>{
+        
+        console.log(dataForms)};
 
 
     const navigate = useNavigate();
