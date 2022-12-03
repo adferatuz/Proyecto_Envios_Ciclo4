@@ -1,23 +1,10 @@
 import {React, useState} from "react";
-import { useNavigate } from "react-router-dom";
 import ModalEnviado from "./confirmacionEnvioFormulario";
 import FormDatosEnvios from './formularioDatosEnvios';
 import FormDatosRecibe from "./formDatosRecibe";
 
 
 export const Envios = () => {
-    const navigate = useNavigate();
-    const handleOnClick = () => {
-        navigate("/");
-    };
-    const navigate1 = useNavigate();
-    const handleOnClick1 = () => {
-        navigate1("/Loggin");
-    };
-    const navigate2 = useNavigate();
-    const handleOnClick2 = () => {
-        navigate2("/EstadoEnvios");
-    };
 
     const confirmarEnvio = ()=>{
         setMostrar(1);          
@@ -42,20 +29,7 @@ export const Envios = () => {
     const formDatosRec = 3;
     
     return (
-        <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container px-5">
-                <a className="navbar-brand" href="#!"><h1 >Envios InstaYA!</h1></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                <div className="collapse navbar-collapse MenuListaNavbar" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm" aria-current="page" href="#!" onClick={handleOnClick}><b> Pagina principal </b></a></li>
-                        <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm" href="#!" onClick={handleOnClick2}><b>Sigue tu envio</b> </a></li>
-                        <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm" href="#!" onClick={handleOnClick1}><b> Log in </b></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <>        
         <div className="container fondo">
             <div className="navbar navbar-expand-lg margen">
                 <h1>Por favor diligencie el siguiente formulario</h1>

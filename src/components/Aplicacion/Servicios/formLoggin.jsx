@@ -18,6 +18,12 @@ const FormLoggin =  ({vista,handleClickChild})=> {
             .then(response => console.log(response.data))
         console.log(dataForms)};
 
+    // useEffect(() =>{
+    //     axios
+    //         .get("http://localhost:4000/userId")
+    //         .then(response =>{console.log(response.data)})
+    // })
+
     return (
         <div className="modal fondo-modal" tabIndex="-1">
             <div className="modal-dialog">
@@ -65,6 +71,7 @@ const FormLoggin =  ({vista,handleClickChild})=> {
                         aria-label="Password" 
                         aria-describedby="addon-wrapping"/>
                         {errors.Password && <span>This field is required <br /></span>}
+
                         <button type="submit" className="btn btn-primary">Guardar</button>
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Cerrar</button>
 

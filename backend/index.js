@@ -8,6 +8,8 @@ const logginRoute = require('../backend/routes/datosLoggin.routes')
 const remitentesRoute = require('../backend/routes/datosRemitentes.routes')
 const enviosRoute = require('../backend/routes/datosEnvio.routes')
 const recibeRoute = require('../backend/routes/datosRecibe.routes')
+const userIdRoute = require('../backend/routes/userId.route')
+
 
 mongoose
     .connect(process.env.MONGO_DB_URI)
@@ -29,6 +31,7 @@ app.use('/loggin',logginRoute)
 app.use('/remitentes',remitentesRoute)
 app.use('/envios',enviosRoute)
 app.use('/recibe',recibeRoute)
+app.use('/userId',userIdRoute)
 
 
 // PORT

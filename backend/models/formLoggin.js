@@ -14,6 +14,7 @@ let usuarioSchema = new Schema ({
         type: String,
         required: true
     }
+    
 },{
     collection:'loggin'
 })

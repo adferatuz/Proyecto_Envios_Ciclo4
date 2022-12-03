@@ -25,6 +25,9 @@ let datosEnviosSchema = new Schema ({
     peso: {
         type: Number,
         required: true, 
+    },
+    userId: {
+        type: Schema.Types.ObjectId, ref: 'formLoggin'
     }
 
 },{
