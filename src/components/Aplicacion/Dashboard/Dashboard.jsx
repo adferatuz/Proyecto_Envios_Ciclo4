@@ -25,8 +25,8 @@ export const Header = () => {
                         <li className="nav-item"><a className="nav-link active btn btn-success btn-circle btn-sm " aria-current="page" href="#!"><b>Pagina principal</b></a></li>
                         
                         <li className="nav-item">
-                            <div class="active">
-                                <button class="btn btn-success nav-link active  " type="button"  aria-expanded="false" onClick={handleOnClick1}>
+                            <div className="active">
+                                <button className="btn btn-success nav-link active  " type="button"  aria-expanded="false" onClick={handleOnClick1}>
                                 <b>Envios</b> 
                                 </button>                            
                             </div>

@@ -10,8 +10,7 @@ const FormDatosEnvios = ({vista, handleClickChild}) => {
     const customSubmit = (dataForms) =>{
         axios
             .post("http://localhost:4000/envios/create", dataForms)
-            .then(response => console.log(response.data))
-        
+            .then(response => console.log(response.data))      
         console.log(dataForms)};
     
     const handleClick = () => {

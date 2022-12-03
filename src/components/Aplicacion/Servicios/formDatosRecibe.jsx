@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 
 const FormDatosRecibe = ({vista, handleClickChild}) => {
     useEffect(() =>{         
@@ -8,6 +9,9 @@ const FormDatosRecibe = ({vista, handleClickChild}) => {
     const {register, formState: {errors}, handleSubmit} = useForm ();
     
     const customSubmit = (dataForm) =>{
+        axios
+            .post("http://localhost:4000/recibe/create", dataForm)
+            .then(response => console.log(response.data))
         console.log(dataForm)
     };
 
