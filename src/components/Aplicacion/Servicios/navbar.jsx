@@ -1,6 +1,13 @@
 import { NavLink } from "react-router-dom"
+import { useEffect } from "react"
 
-const Navbar = () => {
+const Navbar = ({vista, handleClickChild2}) => {
+
+    useEffect(() =>{},[vista])
+    const handleClick = () => {
+        handleClickChild2();
+    }
+
     return (
         <>
         <nav className="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
@@ -34,7 +41,7 @@ const Navbar = () => {
                             <NavLink
                                 style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}
                                 className="nav-link btn btn-ligth"
-                                to="/">Log out</NavLink>
+                                to="/" onClick={handleClick}>Log out</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -15,12 +15,16 @@ export const Actualizable = () => {
         setMostrar(false)
         console.log('hice click')
     }
+    const handleClickChild3 = () => {
+        setMostrar(true)
+        console.log('hice click')
+    }
     return(
         <BrowserRouter>
         {mostrar ? <Loggin vista = {mostrar}  handleClickChild2 = {handleClickChild2}/> : 
-        <Navbar />}
+        <Navbar vista = {mostrar}  handleClickChild2 = {handleClickChild3}/>}
             <Routes>
-                <Route path="/" element ={<Logout vista = {mostrar}  handleClickChild2 = {handleClickChild2}/>}></Route> 
+                <Route path="/" element ={<Logout />}></Route> 
                 <Route path="/PaginaPrincipal" element ={<Header />}></Route>  
                 <Route path="/Envios" element ={<Envios />}></Route> 
                 <Route path="/EstadoEnvios" element ={<EstadoEnvios />}></Route>              

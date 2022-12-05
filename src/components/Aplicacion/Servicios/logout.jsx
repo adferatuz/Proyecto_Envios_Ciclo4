@@ -1,7 +1,7 @@
 import {React} from "react"
 
-const Logout = ({vista, handleClickChild2}) => {
-    useEffect(() =>{},[vista])
+const Logout = () => {
+    
     return(
         <>
         
