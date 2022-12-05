@@ -17,11 +17,9 @@ router.route('/create').post((req, res, next)=>{
         }
     })
 })
-
-// Read envios
-// localhost:4000/envios?userId=1234
-router.route('/').get((req, res, next) => {
-    datosEnviosSchema.find({ userId: req.query.userId }, req.params.id, (error, data) => {
+//localhost:4000/envios/
+router.route('/').get((req, res) => {
+    datosEnviosSchema.find((error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -30,7 +28,17 @@ router.route('/').get((req, res, next) => {
     })
 })
 
-
+// Read envios
+// localhost:4000/envios?userId=1234
+router.route('/').get((req, res, next) => {
+    datosEnviosSchema.find({ userId: req.query.userId }, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+})
 
 //Update login
 // localhost:4000/envios/update/:id

@@ -20,7 +20,7 @@ export const Actualizable = () => {
         {mostrar ? <Loggin vista = {mostrar}  handleClickChild2 = {handleClickChild2}/> : 
         <Navbar />}
             <Routes>
-                <Route path="/Logout" element ={<Logout />}></Route> 
+                <Route path="/" element ={<Logout vista = {mostrar}  handleClickChild2 = {handleClickChild2}/>}></Route> 
                 <Route path="/PaginaPrincipal" element ={<Header />}></Route>  
                 <Route path="/Envios" element ={<Envios />}></Route> 
                 <Route path="/EstadoEnvios" element ={<EstadoEnvios />}></Route>              

@@ -34,7 +34,7 @@ const Navbar = () => {
                             <NavLink
                                 style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}
                                 className="nav-link btn btn-ligth"
-                                to="/Logout">Log out</NavLink>
+                                to="/">Log out</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -4,26 +4,35 @@ import FormLoggin from "./formLoggin";
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 
+
+
 export const Loggin = ({vista, handleClickChild2}) => {
-    useEffect(() =>{         
-    },[vista])
+    useEffect(() =>{},[vista])
 
     const [mostrar, setMostrar] = useState (false);
     const [datos,setDatos] = useState (null);
+    const [contraseña,setContraseña] = useState (null);
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{         
-            axios
-                .get("http://localhost:4000/loggin/read")
-                .then(response =>{
-                    setDatos(response.data)
-                    dataForms ?
-                    datos.map((dato, index) => {
-                            return ( dato.Password === dataForms.LogginPassword ?
-                                    handleClickChild2() : 
-                                    console.log('no entro al primer if')
-                                )}) : console.log('dataform es null')                                        
-        })}
-    
+
+   
+    const customSubmit = (dataForms) =>{
+        axios
+        .get("http://localhost:4000/loggin/read")
+        .then(response =>{    
+            setDatos(response.data)
+            datos?.map((data,index) =>{
+                if(data.Password === dataForms.LogginPassword && data.username === dataForms.LogginUsername ){
+                    handleClickChild2()
+                console.log( 'esta en el primer if, el valor de data.password es: ' + data.Password)   
+                }else{
+                    console.log('no entro al primer if')
+                }   
+            })
+                       
+    })
+        
+     }
+
     const handleShowFormClick = () => {
         setMostrar(true)
     }
@@ -37,7 +46,7 @@ export const Loggin = ({vista, handleClickChild2}) => {
             <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container px-5">
-                <a className="navbar-brand" href="/"><h1 >Envios InstaYA!</h1></a>
+                <a className="navbar-brand" href=""><h1 >Envios InstaYA!</h1></a>
             </div>
         </nav>
                 <div id="navbarNav">
