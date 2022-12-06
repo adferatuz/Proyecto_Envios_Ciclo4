@@ -4,31 +4,7 @@ import axios from 'axios'
 
 const FormDatosEnvios = ({vista, handleClickChild, formulario, userId}) => {
     const [datos,setDatos] = useState(null)
-    const [data2,setData2] = useState(null)
-    const [codigo,setCodigo] = useState(null)
-    useEffect(() =>{ 
-            
-            
-    },[vista])
-
-    useEffect(() =>{
-        axios
-        .get("http://localhost:4000/loggin/read")
-        .then(result => {
-            setDatos(result.data)   
-            })       
-    },[])
-    
-    useEffect(() =>{
-        axios
-        .get("http://localhost:4000/userId")
-        .then(res => {
-            setCodigo(res.data)   
-            })
-    },[])
-       
-
-    
+    useEffect(() =>{},[vista])
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
     const customSubmit = (dataForms) =>{        
@@ -36,11 +12,7 @@ const FormDatosEnvios = ({vista, handleClickChild, formulario, userId}) => {
         axios
             .post("http://localhost:4000/envios/create", dataForms)
             .then(response => console.log(response.data)) 
-            console.log('no se pudo')
-        /*  axios
-            .put("http://localhost:4000/envios/update/638e2ee19fbcb504278e0f19", data)
-            .then(res => console.log(res.data)) :
-            console.log('no se pudo') */  
+         
             handleClickChild()
     }
     

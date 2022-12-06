@@ -5,48 +5,22 @@ import { useForm } from "react-hook-form";
 import axios from 'axios'
 
 export const Loggin = ({vista, handleClickChild2}) => {
-    useEffect(() =>{
-
-    },[vista]) 
-
+    useEffect(() =>{},[vista]) 
     const [mostrar, setMostrar] = useState (false);
     const [datos,setDatos] = useState (null);
-    const [contraseña,setContraseña] = useState (null);
     const {register, formState: {errors}, handleSubmit} = useForm ();
-
+   
     const customSubmit = (dataForms) =>{
         axios
         .get("http://localhost:4000/loggin/read")
         .then(response =>{    
             setDatos(response.data)
             datos?.map((data) =>{
-                if(data.Password === dataForms.LogginPassword && data.username === dataForms.LogginUsername ){
-                   setContraseña(data.username) 
-                    handleClickChild2()  
-                }  
-            })})
-                       
-        datos?.map((dato) =>{
-            const userId = 
-            { userId: dato._id  }
-            return(
-                userId?                
-                     axios
-                        .post("http://localhost:4000/userId/create", userId)
-                        .then(result=> console.log(result.data)):
-                        console.log('no funciono') 
-            )})
-        
-        datos?.map((dato) =>{
-            const userId = 
-            { userId: dato._id } 
-            return(
-                userId?
-                    axios 
-                        .put("http://localhost:4000/loggin/update/" +dato._id, userId)
-                        .then(result=> console.log(result.data)):
-                        console.log('no funciono')
-            )}) 
+                if(data.Password === dataForms.LogginPassword &&
+                  data.username === dataForms.LogginUsername)
+                  { handleClickChild2()}  
+            })})       
+         
         }       
     
     const handleShowFormClick = () => {
@@ -103,7 +77,7 @@ export const Loggin = ({vista, handleClickChild2}) => {
                         </div>
                         <div className="col-2">
                             
-                            <button type="submit" className="btn btn-primary" >  Success</button>
+                            <button type="submit" className="btn btn-primary" >  Doble Click!!</button>
                            
                             </div>
                         </form>                            

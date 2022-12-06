@@ -28,7 +28,7 @@ let datosEnviosSchema = new Schema ({
         required: false, 
     },
     userId: {
-        type: Schema.Types.ObjectId, ref:'User'
+        type: Schema.Types.ObjectId, ref: 'User'
     },
     delicado: {
         type: String,
@@ -76,6 +76,6 @@ let datosEnviosSchema = new Schema ({
     }
 
 },{
-    colection:'Datos Envio'
+    collection:'envios'
 })
 module.exports = mongoose.model('Envios',datosEnviosSchema)

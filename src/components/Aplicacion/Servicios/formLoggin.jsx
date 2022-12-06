@@ -4,26 +4,24 @@ import axios from 'axios'
 
 
 const FormLoggin =  ({vista,handleClickChild})=> {
-    useEffect(() =>{         
-    },[vista])
-
-    const handleClick = () => {
-        handleClickChild();
-    }
-
+    useEffect(() =>{},[vista]) 
+    const [datos,setDatos] = useState(null)
+    const [mostrarBtn,setMostrarBtn] = useState(true)
+    const handleClick = () => {handleClickChild()}     
+    const handleBtnClick= () =>{handleClickChild()}     
     const {register, formState: {errors}, handleSubmit} = useForm ();
     const customSubmit1 = (dataForms) =>{
         axios
             .post("http://localhost:4000/loggin/create", dataForms)
-            .then(response => console.log(response.data))
-        console.log(dataForms)};
-
-    // useEffect(() =>{
-    //     axios
-    //         .get("http://localhost:4000/userId")
-    //         .then(response =>{console.log(response.data)})
-    // })
-
+            .then(res =>{console.log(res.data) }) 
+        
+        const alto = { alto: '' }   
+        axios 
+            .post("http://localhost:4000/envios/create", alto)
+            .then(result=> console.log(result.data))                          
+        setMostrarBtn(false)
+    }   
+     
     return (
         <div className="modal fondo-modal" tabIndex="-1">
             <div className="modal-dialog">
@@ -72,11 +70,21 @@ const FormLoggin =  ({vista,handleClickChild})=> {
                         aria-describedby="addon-wrapping"/>
                         {errors.Password && <span>This field is required <br /></span>}
 
-                        <button type="submit" className="btn btn-primary">Guardar</button>
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Cerrar</button>
-
+                        { mostrarBtn ? <button type="submit" className="btn btn-primary">Guardar</button>:''}
+                        
                     </div>
-                    </form>   
+                    </form>
+                        {mostrarBtn == false ? <div >
+                            <button type="button" 
+                            className="btn btn-success"
+                            data-bs-dismiss="modal"
+                            onClick={handleBtnClick}
+                            >Confirmar Envio</button>
+                        </div> :''}
+                        <div>   
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Cerrar</button> 
+                        </div>
+                      
                 </div>              
                 </div>                
             </div>           

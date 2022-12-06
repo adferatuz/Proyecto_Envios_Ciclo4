@@ -6,8 +6,6 @@ require("dotenv").config()
 
 const logginRoute = require('../backend/routes/datosLoggin.routes')
 const enviosRoute = require('../backend/routes/datosEnvio.routes')
-const userIdRoute = require('../backend/routes/userId.route')
-
 
 mongoose
     .connect(process.env.MONGO_DB_URI)
@@ -27,7 +25,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 app.use('/loggin',logginRoute)
 app.use('/envios',enviosRoute)
-app.use('/userId',userIdRoute)
+
 
 
 // PORT

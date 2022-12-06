@@ -2,32 +2,18 @@ import {React, useState,useEffect} from "react";
 import ModalEnviado from "./confirmacionEnvioFormulario";
 import FormDatosEnvios from './formularioDatosEnvios';
 import FormDatosRecibe from "./formDatosRecibe";
-import axios from "axios";
 
 export const Envios = () => {    
 
-    const confirmarEnvio = ()=>{
-        setMostrar(1);          
-    }
-
-    const confirmarEnvio2 = ()=>{
-        setMostrar(2);          
-    }
-
-    const confirmarEnvio3 = ()=>{
-        setMostrar(3);          
-    }
-
-    const handleClickChild = () => {
-        setMostrar(0)
-        console.log('cerrar'+''+setMostrar)
-    }
-
+    const confirmarEnvio = ()=>{ setMostrar(1)}            
+    const confirmarEnvio2 = ()=>{setMostrar(2)}            
+    const confirmarEnvio3 = ()=>{ setMostrar(3)} 
+    const handleClickChild = () => {setMostrar(0)}            
     const [mostrar, setMostrar] = useState (0);
     const formDatosPer = 1;
     const formDatosEnv = 2;
     const formDatosRec = 3;
-    
+   
     return (
         <>        
         <div className="container fondo">
