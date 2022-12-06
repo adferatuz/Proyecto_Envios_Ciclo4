@@ -5,7 +5,9 @@ import { useForm } from "react-hook-form";
 import axios from 'axios'
 
 export const Loggin = ({vista, handleClickChild2}) => {
-    useEffect(() =>{},[vista])
+    useEffect(() =>{
+
+    },[vista]) 
 
     const [mostrar, setMostrar] = useState (false);
     const [datos,setDatos] = useState (null);
@@ -30,7 +32,7 @@ export const Loggin = ({vista, handleClickChild2}) => {
             return(
                 userId?                
                      axios
-                         .post("http://localhost:4000/userId/create", userId)
+                        .post("http://localhost:4000/userId/create", userId)
                         .then(result=> console.log(result.data)):
                         console.log('no funciono') 
             )})

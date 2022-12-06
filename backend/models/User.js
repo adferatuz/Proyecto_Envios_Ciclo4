@@ -23,4 +23,4 @@ let usuarioSchema = new Schema ({
 },{
     collection:'loggin'
 })
-module.exports = mongoose.model('formLoggin',usuarioSchema)
+module.exports = mongoose.model('User',usuarioSchema)

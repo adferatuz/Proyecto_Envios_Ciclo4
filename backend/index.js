@@ -5,9 +5,7 @@ let bodyParser = require('body-parser')
 require("dotenv").config()
 
 const logginRoute = require('../backend/routes/datosLoggin.routes')
-const remitentesRoute = require('../backend/routes/datosRemitentes.routes')
 const enviosRoute = require('../backend/routes/datosEnvio.routes')
-const recibeRoute = require('../backend/routes/datosRecibe.routes')
 const userIdRoute = require('../backend/routes/userId.route')
 
 
@@ -28,9 +26,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors())
 app.use('/loggin',logginRoute)
-app.use('/remitentes',remitentesRoute)
 app.use('/envios',enviosRoute)
-app.use('/recibe',recibeRoute)
 app.use('/userId',userIdRoute)
 
 

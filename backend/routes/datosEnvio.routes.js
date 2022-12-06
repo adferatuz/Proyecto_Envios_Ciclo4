@@ -2,7 +2,7 @@ let mongoose = require('mongoose'),
     express = require('express'),
     router = express.Router()
 
-let datosEnviosSchema = require('../models/FormDatosEnvio')
+let datosEnviosSchema = require('../models/Envios')
 
 // CRUD
 

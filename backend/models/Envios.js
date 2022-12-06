@@ -1,3 +1,4 @@
+const { reference } = require('@popperjs/core')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
@@ -27,8 +28,7 @@ let datosEnviosSchema = new Schema ({
         required: false, 
     },
     userId: {
-        type: String,
-        required: false
+        type: Schema.Types.ObjectId, ref:'User'
     },
     delicado: {
         type: String,
@@ -78,4 +78,4 @@ let datosEnviosSchema = new Schema ({
 },{
     colection:'Datos Envio'
 })
-module.exports = mongoose.model('FormDatosEnvio',datosEnviosSchema)
+module.exports = mongoose.model('Envios',datosEnviosSchema)
