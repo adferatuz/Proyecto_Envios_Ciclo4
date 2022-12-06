@@ -14,7 +14,8 @@ const Navbar = ({vista, handleClickChild2}) => {
             <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container px-5">
-                <a className="navbar-brand" href="/"><h1 >Envios InstaYA!</h1></a>
+                <span  className="navbar-brand"><h1 >Envios InstaYA!</h1></span>
+                
             </div>
         </nav>
                 <div id="navbarNav">

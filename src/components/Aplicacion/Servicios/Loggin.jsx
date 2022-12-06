@@ -4,8 +4,6 @@ import FormLoggin from "./formLoggin";
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 
-
-
 export const Loggin = ({vista, handleClickChild2}) => {
     useEffect(() =>{},[vista])
 
@@ -14,25 +12,41 @@ export const Loggin = ({vista, handleClickChild2}) => {
     const [contraseña,setContraseña] = useState (null);
     const {register, formState: {errors}, handleSubmit} = useForm ();
 
-   
     const customSubmit = (dataForms) =>{
         axios
         .get("http://localhost:4000/loggin/read")
         .then(response =>{    
             setDatos(response.data)
-            datos?.map((data,index) =>{
+            datos?.map((data) =>{
                 if(data.Password === dataForms.LogginPassword && data.username === dataForms.LogginUsername ){
-                    handleClickChild2()
-                console.log( 'esta en el primer if, el valor de data.password es: ' + data.Password)   
-                }else{
-                    console.log('no entro al primer if')
-                }   
-            })
+                   setContraseña(data.username) 
+                    handleClickChild2()  
+                }  
+            })})
                        
-    })
+        datos?.map((dato) =>{
+            const userId = 
+            { userId: dato._id  }
+            return(
+                userId?                
+                     axios
+                         .post("http://localhost:4000/userId/create", userId)
+                        .then(result=> console.log(result.data)):
+                        console.log('no funciono') 
+            )})
         
-     }
-
+        datos?.map((dato) =>{
+            const userId = 
+            { userId: dato._id } 
+            return(
+                userId?
+                    axios 
+                        .put("http://localhost:4000/loggin/update/" +dato._id, userId)
+                        .then(result=> console.log(result.data)):
+                        console.log('no funciono')
+            )}) 
+        }       
+    
     const handleShowFormClick = () => {
         setMostrar(true)
     }
@@ -46,7 +60,7 @@ export const Loggin = ({vista, handleClickChild2}) => {
             <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container px-5">
-                <a className="navbar-brand" href=""><h1 >Envios InstaYA!</h1></a>
+            <span  className="navbar-brand"><h1 >Envios InstaYA!</h1></span>
             </div>
         </nav>
                 <div id="navbarNav">

@@ -29,7 +29,7 @@ router.route('/').get((req, res) => {
 })
 
 // Read envios
-// localhost:4000/envios?userId=1234
+// http://localhost:4000/envios?userId=1234
 router.route('/').get((req, res, next) => {
     datosEnviosSchema.find({ userId: req.query.userId }, (error, data) => {
         if (error) {
@@ -40,10 +40,12 @@ router.route('/').get((req, res, next) => {
     })
 })
 
+
+
 //Update login
-// localhost:4000/envios/update/:id
+//http://localhost:4000/envios/update/:id
 router.route('/update/:id').put((req, res, next)=>{
-    datosEnviosSchema.findByIdAndUpdate(req.params.id,{
+    datosEnviosSchema.findOneAndUpdate({userId: req.params.userId},{
         $set: req.body
     },
          (error, data)=> {

@@ -1,17 +1,48 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 
-const FormDatosEnvios = ({vista, handleClickChild}) => {
-    useEffect(() =>{         
+const FormDatosEnvios = ({vista, handleClickChild, formulario, userId}) => {
+    const [datos,setDatos] = useState(null)
+    const [data2,setData2] = useState(null)
+    const [codigo,setCodigo] = useState(null)
+    useEffect(() =>{ 
+            
+            
     },[vista])
 
+    useEffect(() =>{
+        axios
+        .get("http://localhost:4000/loggin/read")
+        .then(result => {
+            setDatos(result.data)   
+            })       
+    },[])
+    
+    useEffect(() =>{
+        axios
+        .get("http://localhost:4000/userId")
+        .then(res => {
+            setCodigo(res.data)   
+            })
+    },[])
+       
+
+    
+
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{
+    const customSubmit = (dataForms) =>{        
+        
         axios
             .post("http://localhost:4000/envios/create", dataForms)
-            .then(response => console.log(response.data))      
-        console.log(dataForms)};
+            .then(response => console.log(response.data)) 
+            console.log('no se pudo')
+        /*  axios
+            .put("http://localhost:4000/envios/update/638e2ee19fbcb504278e0f19", data)
+            .then(res => console.log(res.data)) :
+            console.log('no se pudo') */  
+            handleClickChild()
+    }
     
     const handleClick = () => {
         handleClickChild();
@@ -81,13 +112,16 @@ const FormDatosEnvios = ({vista, handleClickChild}) => {
                             {errors.largo && <span>This field is required.<br /></span>}
 
                         </div>
-                        <div className="col-4"><h6>Mercancia delicada?</h6>                   
+                        <div className="col-4"><h6>Mercancia delicada? Marque si o no</h6>                   
                             <div className="input-group mb-3">                   
-                                <select className="form-select" id="inputGroupSelect01">
-                                    <option select ="true">Elige</option>
-                                    <option defaultValue="1">Si</option>
-                                    <option defaultValue="2">No</option>   
-                                </select>
+                            <input {...register("delicado", { required: true })}
+                            aria-invalid = {errors.delicado ? "true": "false"}
+                            type="text" 
+                            className="form-control" 
+                            id="delicado"
+                            name="delicado" /> 
+                            {errors.delicado && <span>This field is required.<br /></span>}
+
                             </div>
                             <label htmlFor="peso"><h6>Peso aproximado en kg</h6></label>
                             <input {...register("peso", { required: true })}

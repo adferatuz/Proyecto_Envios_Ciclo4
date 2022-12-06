@@ -4,30 +4,75 @@ const Schema = mongoose.Schema
 let datosEnviosSchema = new Schema ({
     time: {
         type: String,
-        required: true,
+        required: false,
     },
     date: {
         type: String,
-        required: true, 
+        required: false, 
     },
     alto: {
         type: Number,
-        required: true, 
+        required: false, 
     },
     ancho: {
         type: Number,
-        required: true, 
+        required: false, 
     },
     largo: {
         type: Number,
-        required: true, 
+        required: false, 
     },
     peso: {
         type: Number,
-        required: true, 
+        required: false, 
     },
     userId: {
-        type: Schema.Types.ObjectId, ref: 'formLoggin'
+        type: String,
+        required: false
+    },
+    delicado: {
+        type: String,
+        required: false
+    },
+    DireccionLlegada: {
+        type: String,
+        required: false,
+    },
+    ciudadLlegada: {
+        type: String,
+        required: false, 
+    },
+    IdRecibe: {
+        type: Number,
+        required: false, 
+    },
+    nombreRecibe: {
+        type: String,
+        required: false, 
+    },
+    apellidoRecibe: {
+        type: String,
+        required: false, 
+    },
+    direccionRemitente: {
+        type: String,
+        required: false,
+    },
+    ciudadRemitente: {
+        type: String,
+        required: false, 
+    },
+    IdRemitente: {
+        type: Number,
+        required: false, 
+    },
+    firstname: {
+        type: String,
+        required: false, 
+    },
+    lastName: {
+        type: String,
+        required: false, 
     }
 
 },{

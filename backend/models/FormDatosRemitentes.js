@@ -21,6 +21,9 @@ let remitenteSchema = new Schema ({
     lastName: {
         type: String,
         required: true, 
+    },
+    userId: {
+        type: Schema.Types.ObjectId
     }
 },{
     colection:'DatosRemitente'

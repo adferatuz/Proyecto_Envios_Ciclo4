@@ -13,11 +13,11 @@ export const Actualizable = () => {
     const [mostrar, setMostrar] = useState(true)
     const handleClickChild2 = () => {
         setMostrar(false)
-        console.log('hice click')
+       
     }
     const handleClickChild3 = () => {
         setMostrar(true)
-        console.log('hice click')
+       
     }
     return(
         <BrowserRouter>

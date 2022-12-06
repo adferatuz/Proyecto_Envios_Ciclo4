@@ -4,12 +4,23 @@ let mongoose = require('mongoose'),
 
 let userIdSchema = require('../models/UserId')
 
-//localhost:5000/users/
+//localhost:4000/userId/
 router.route('/').get((req, res) => {
     userIdSchema.find((error, data) => {
         if (error) {
             return next(error)
         } else {
+            res.json(data)
+        }
+    })
+})
+
+// localhost:4000/users/create
+router.route('/create').post((req, res, next)=>{
+    userIdSchema.create(req.body,(error, data) => {
+        if (error){
+            return next(error)
+        } else{
             res.json(data)
         }
     })

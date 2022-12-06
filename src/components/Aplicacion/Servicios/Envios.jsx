@@ -1,10 +1,10 @@
-import {React, useState} from "react";
+import {React, useState,useEffect} from "react";
 import ModalEnviado from "./confirmacionEnvioFormulario";
 import FormDatosEnvios from './formularioDatosEnvios';
 import FormDatosRecibe from "./formDatosRecibe";
+import axios from "axios";
 
-
-export const Envios = () => {
+export const Envios = () => {    
 
     const confirmarEnvio = ()=>{
         setMostrar(1);          
@@ -39,12 +39,12 @@ export const Envios = () => {
                     <div className="col-4">                
                         <i className="bi bi-brightness-alt-high-fill"></i>
                         <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio()}}>Por favor ingrese sus datos perosnales.</button>
-                        { formDatosPer === mostrar ? <ModalEnviado vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}  
+                        { formDatosPer === mostrar ? <ModalEnviado vista = {mostrar}  handleClickChild = {handleClickChild}/> : ''}  
                     </div>
                     <div className="col-4">
                         <i className="bi bi-brightness-alt-high-fill"></i>
                         <button type="button" className="btn btn-primary" onClick={()=>{confirmarEnvio2()}}>Por favor digite los datos del envio.</button> 
-                        { formDatosEnv === mostrar ? <FormDatosEnvios vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}
+                        { formDatosEnv === mostrar ? <FormDatosEnvios vista = {mostrar}  handleClickChild = {handleClickChild}/> : ''}
                     </div>               
                     <div className="col-4">
                         <i className="bi bi-brightness-alt-high-fill"></i>

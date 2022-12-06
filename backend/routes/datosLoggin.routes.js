@@ -34,7 +34,7 @@ router.route('/read').get((req, res, next)=>{
 //Update login
 // localhost:4000/loggin/update/:id
 router.route('/update/:id').put((req, res, next)=>{
-    usuarioSchema.findByIdAndUpdate(req.params.id,{
+    usuarioSchema.findOneAndUpdate({_id: req.params.id},{
         $set: req.body
     },
          (error, data)=> {
