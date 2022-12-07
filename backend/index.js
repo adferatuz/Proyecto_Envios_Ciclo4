@@ -4,7 +4,7 @@ let cors = require('cors')
 let bodyParser = require('body-parser')
 require("dotenv").config()
 
-const logginRoute = require('../backend/routes/datosLoggin.routes')
+
 const enviosRoute = require('../backend/routes/datosEnvio.routes')
 
 mongoose
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use(cors())
-app.use('/loggin',logginRoute)
+
 app.use('/envios',enviosRoute)
 
 

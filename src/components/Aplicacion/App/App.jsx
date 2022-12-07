@@ -10,24 +10,15 @@ import Navbar from "../Servicios/navbar";
 import Logout from "../Servicios/logout";
 
 export const Actualizable = () => {
-    const [mostrar, setMostrar] = useState(true)
-    const handleClickChild2 = () => {
-        setMostrar(false)
-       
-    }
-    const handleClickChild3 = () => {
-        setMostrar(true)
-       
-    }
     return(
         <BrowserRouter>
-        {mostrar ? <Loggin vista = {mostrar}  handleClickChild2 = {handleClickChild2}/> : 
-        <Navbar vista = {mostrar}  handleClickChild2 = {handleClickChild3}/>}
+        <Navbar />
             <Routes>
-                <Route path="/" element ={<Logout />}></Route> 
+                <Route path="/" element ={<Loggin />}></Route> 
+                <Route path="/Logout" element ={<Logout />}></Route> 
                 <Route path="/PaginaPrincipal" element ={<Header />}></Route>  
                 <Route path="/Envios" element ={<Envios />}></Route> 
-                <Route path="/EstadoEnvios" element ={<EstadoEnvios />}></Route>              
+                <Route path="/EstadoEnvios" element ={<EstadoEnvios />}></Route>             
             </Routes>
         </BrowserRouter>       
     )

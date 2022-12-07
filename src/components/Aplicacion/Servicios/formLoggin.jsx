@@ -4,24 +4,21 @@ import axios from 'axios'
 
 
 const FormLoggin =  ({vista,handleClickChild})=> {
-    useEffect(() =>{},[vista]) 
-    const [datos,setDatos] = useState(null)
-    const [mostrarBtn,setMostrarBtn] = useState(true)
-    const handleClick = () => {handleClickChild()}     
-    const handleBtnClick= () =>{handleClickChild()}     
-    const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit1 = (dataForms) =>{
-        axios
-            .post("http://localhost:4000/loggin/create", dataForms)
-            .then(res =>{console.log(res.data) }) 
-        
-        const alto = { alto: '' }   
-        axios 
-            .post("http://localhost:4000/envios/create", alto)
-            .then(result=> console.log(result.data))                          
-        setMostrarBtn(false)
-    }   
      
+    const [codigo,setCodigo] = useState (null)
+    const [mostrarBtn,setMostrarBtn] = useState(true)
+    const handleClick = () => {handleClickChild()} 
+    const handleBtnClick= () =>{ handleClickChild()}     
+    useEffect(() =>{},[vista])     
+    const {register, formState: {errors}, handleSubmit} = useForm ();
+    const customSubmit1 = (dataForms) =>{  
+        axios 
+            .post("http://localhost:4000/envios/create", dataForms)
+            .then(result=>
+                {setCodigo(result.data._id) 
+                (console.log(result.data._id))})
+        setMostrarBtn(false)  }                         
+    
     return (
         <div className="modal fondo-modal" tabIndex="-1">
             <div className="modal-dialog">
@@ -84,6 +81,9 @@ const FormLoggin =  ({vista,handleClickChild})=> {
                         <div>   
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClick}>Cerrar</button> 
                         </div>
+                        <div className="card h-100 form__item">
+                           {codigo ? <span id="spanCode"><b>Codigo de seguimiento De Envio: {codigo}</b></span>:''}
+                        </div> 
                       
                 </div>              
                 </div>                

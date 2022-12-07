@@ -18,7 +18,7 @@ router.route('/create').post((req, res, next)=>{
     })
 })
 //localhost:4000/envios/
-router.route('/').get((req, res) => {
+router.route('/read').get((req, res) => {
     datosEnviosSchema.find((error, data) => {
         if (error) {
             return next(error)
@@ -40,7 +40,16 @@ router.route('/').get((req, res, next) => {
     })
 })
 
-
+//localhost:5000/envios?userId=1234
+router.route('/').get((req, res, next) => {
+    datosEnviosSchema.find({ userId: req.query.userId }, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+})
 
 //Update login
 //http://localhost:4000/envios/update/:id

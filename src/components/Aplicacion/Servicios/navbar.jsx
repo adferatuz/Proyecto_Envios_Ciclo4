@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-const Navbar = ({vista, handleClickChild2}) => {
+const Navbar = ({}) => {
 
-    useEffect(() =>{},[vista])
+    const [mostrar,setMostrar] = useState(false)
     const handleClick = () => {
-        handleClickChild2();
+       setMostrar(true) 
     }
 
     return (
         <>
-        <nav className="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg bg-light navbar-dark bg-dark navbar-nav">
             <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container px-5">
@@ -18,14 +18,17 @@ const Navbar = ({vista, handleClickChild2}) => {
                 
             </div>
         </nav>
-                <div id="navbarNav">
+                <div id="navbar-nav">
                     <ul className="navbar-nav">
+                    
                     <li className="nav-item">
                             <NavLink
                                 style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}
                                 className="nav-link btn btn-ligth"
                                 to="/PaginaPrincipal">PaginaPrincipal</NavLink>
                         </li>
+                        
+                        
                         <li className="nav-item">
                             <NavLink
                                 style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}
@@ -38,12 +41,14 @@ const Navbar = ({vista, handleClickChild2}) => {
                                 className="nav-link btn btn-ligth"
                                 to="/EstadoEnvios">Sigue tu Envio</NavLink>
                         </li>
+                       
                         <li className="nav-item">
                             <NavLink
                                 style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}
                                 className="nav-link btn btn-ligth"
-                                to="/" onClick={handleClick}>Log out</NavLink>
+                                to="/" onClick={handleClick}>Bienvenido</NavLink>
                         </li>
+                        
                     </ul>
                 </div>
             </div>

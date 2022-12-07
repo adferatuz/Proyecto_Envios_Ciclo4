@@ -4,24 +4,36 @@ import FormLoggin from "./formLoggin";
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 
-export const Loggin = ({vista, handleClickChild2}) => {
+export const Loggin = ({vista}) => {
     useEffect(() =>{},[vista]) 
-    const [mostrar, setMostrar] = useState (false);
-    const [datos,setDatos] = useState (null);
+    const [mostrar, setMostrar] = useState (false)
+    const [datos,setDatos] = useState (null)
+    const [codigo,setCodigo] = useState (null)
+    const [update,setUpdate] = useState (false)
     const {register, formState: {errors}, handleSubmit} = useForm ();
    
     const customSubmit = (dataForms) =>{
         axios
-        .get("http://localhost:4000/loggin/read")
+        .get("http://localhost:4000/envios/read")
         .then(response =>{    
             setDatos(response.data)
             datos?.map((data) =>{
                 if(data.Password === dataForms.LogginPassword &&
                   data.username === dataForms.LogginUsername)
-                  { handleClickChild2()}  
+                  {return(setCodigo(data._id))}        
             })})       
+         } 
          
-        }       
+   /*  if(codigo === true)
+    {
+        setUpdate(true)
+        useEffect(() =>{
+            axios
+                .put("")
+        },[update])   
+        
+    } */
+           
     
     const handleShowFormClick = () => {
         setMostrar(true)
@@ -32,19 +44,6 @@ export const Loggin = ({vista, handleClickChild2}) => {
 
     return (
         <>
-         <nav className="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
-            <div className="container-fluid">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container px-5">
-            <span  className="navbar-brand"><h1 >Envios InstaYA!</h1></span>
-            </div>
-        </nav>
-                <div id="navbarNav">
-                    <ul className="navbar-nav">
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div className="fondo">
         <div className="container">
             <div className="col-md-4 mb-5 item">
@@ -78,13 +77,15 @@ export const Loggin = ({vista, handleClickChild2}) => {
                         <div className="col-2">
                             
                             <button type="submit" className="btn btn-primary" >  Doble Click!!</button>
-                           
                             </div>
                         </form>                            
                             <div className="col">
                             <button type="button" className="btn btn-success" onClick={()=> {handleShowFormClick()}}>Crear usuario</button>
                             {mostrar ? <FormLoggin vista = {mostrar}  handleClickChild = {handleClickChild} /> : ''}
-                            </div>   
+                            </div>
+                            <div className="card h-100 form__item">
+                           {codigo ? <span id="spanCode"><b>Codigo de seguimiento De Envio: {codigo}</b></span>:''}
+                           </div>   
                     </div>
                     
                 </div>
