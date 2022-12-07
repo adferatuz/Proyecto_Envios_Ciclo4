@@ -7,32 +7,25 @@ import axios from 'axios'
 export const Loggin = ({vista}) => {
     useEffect(() =>{},[vista]) 
     const [mostrar, setMostrar] = useState (false)
-    const [datos,setDatos] = useState (null)
     const [codigo,setCodigo] = useState (null)
-    const [update,setUpdate] = useState (false)
     const {register, formState: {errors}, handleSubmit} = useForm ();
    
     const customSubmit = (dataForms) =>{
         axios
         .get("http://localhost:4000/envios/read")
         .then(response =>{    
-            setDatos(response.data)
-            datos?.map((data) =>{
+            response.data?.map((data) =>{
                 if(data.Password === dataForms.LogginPassword &&
                   data.username === dataForms.LogginUsername)
-                  {return(setCodigo(data._id))}        
+                {
+                    return(setCodigo(data._id))
+                }else 
+                {
+                    return(setCodigo('No Esta Registrado')) 
+                } 
+                       
             })})       
          } 
-         
-   /*  if(codigo === true)
-    {
-        setUpdate(true)
-        useEffect(() =>{
-            axios
-                .put("")
-        },[update])   
-        
-    } */
            
     
     const handleShowFormClick = () => {

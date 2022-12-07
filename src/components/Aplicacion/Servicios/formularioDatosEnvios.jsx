@@ -5,15 +5,29 @@ import axios from 'axios'
 const FormDatosEnvios = ({vista, handleClickChild, formulario, userId}) => {
     const [datos,setDatos] = useState(null)
     useEffect(() =>{},[vista])
+    useEffect(() =>{
+       
+            
+    },[])
+
+
 
     const {register, formState: {errors}, handleSubmit} = useForm ();
-    const customSubmit = (dataForms) =>{        
-        
+    const customSubmit = (dataForms) =>{  
+              
         axios
-            .post("http://localhost:4000/envios/create", dataForms)
+            .get("http://localhost:4000/envios/read")
+            .then(response =>
+            { 
+                setDatos(response.data._id) 
+                console.log(datos)
+            })
+
+        axios
+            .put("http://localhost:4000/envios/create"+datos, dataForms)
             .then(response => console.log(response.data)) 
          
-            handleClickChild()
+            // handleClickChild()
     }
     
     const handleClick = () => {
